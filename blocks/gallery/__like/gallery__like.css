@@ -2,9 +2,11 @@
   max-width: 22px;
   min-height: 19px;
   width: 100%;
+  margin: 0;
+  padding: 0;
   background: none;
   border: none;
-  background-image: url(../../../images/element-like-disabled.png);
+  background-image: url(../../../images/element-like-disabled.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
