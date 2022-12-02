@@ -9,8 +9,8 @@
 
 @media screen and (max-width: 700px) {
   .footer__copy {
-  margin-bottom: 36px;
-  font-size: 14px;
-  line-height: 17px;
+    margin-bottom: 36px;
+    font-size: 14px;
+    line-height: 17px;
   }
 }

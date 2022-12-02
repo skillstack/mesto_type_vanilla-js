@@ -16,9 +16,6 @@
   .profile__subtitle {
     grid-column: 1 / 4;
     max-width: 282px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
     font-size: 14px;
     line-height: 17px;
   }
