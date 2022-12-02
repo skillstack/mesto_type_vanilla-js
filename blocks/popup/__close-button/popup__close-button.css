@@ -12,8 +12,12 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  cursor: pointer;
+  transition: opacity .3s ease;
+}
 
+.popup__close-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
 }
 
 @media screen and (max-width: 635px) {
