@@ -26,12 +26,15 @@ const popupProfile = document.querySelector('.popup_type_profile');
 const popupFormProfile = popupProfile.querySelector('.popup__form');
 const inputName = popupProfile.querySelector('.popup__input_type_name');
 const inputAbout = popupProfile.querySelector('.popup__input_type_about');
+const profileInputList = Array.from(popupFormProfile.querySelectorAll('.popup__input'));
+const profileSaveButton = popupFormProfile.querySelector('.popup__save-button');
 
 // Галерея для вставки карточки места
 const gallery = document.querySelector('.gallery');
 
 // Шаблон карточки места
 const cardTemplate = document.querySelector('#cardTemplate').content;
+const cardElement = cardTemplate.querySelector('.gallery__item');
 
 // Кнопка добавления карточки места
 const cardAddButton = document.querySelector('.profile__add-button');
@@ -41,6 +44,8 @@ const popupCard = document.querySelector('.popup_type_card');
 const popupFormCard = popupCard.querySelector('.popup__form');
 const inputPlace = popupCard.querySelector('.popup__input_type_place');
 const inputLink = popupCard.querySelector('.popup__input_type_link');
+const cardInputList = Array.from(popupFormCard.querySelectorAll('.popup__input'));
+const cardSaveButton = popupFormCard.querySelector('.popup__save-button');
 
 // Popup фотографии места
 const popupFigure = document.querySelector('.popup_type_img');
@@ -59,7 +64,6 @@ function closePopupEsc(evt) {
 };
 
 function openPopup(popup) {
-  enableValidation(validationConfig);
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupEsc);
 };
@@ -87,6 +91,10 @@ popupList.forEach((popup) => {
 profileEditButton.addEventListener('click', () => {
   inputName.value = profileName.textContent;
   inputAbout.value = profileAbout.textContent;
+  toggleButtonState(profileInputList, profileSaveButton, validationConfig);
+  profileInputList.forEach((inputElement) => {
+    hideInputError(popupFormProfile, inputElement, validationConfig);
+  });
   openPopup(popupProfile);
 });
 
@@ -109,11 +117,11 @@ function openImg(name, link) {
 
 //Формирование карточки места
 function createCard(name, link) {
-  const cardElement = cardTemplate.querySelector('.gallery__item').cloneNode(true);
-  const cardPhoto = cardElement.querySelector('.gallery__photo');
-  const cardTitle = cardElement.querySelector('.gallery__title');
-  const cardDeleteButton = cardElement.querySelector('.gallery__del');
-  const heart = cardElement.querySelector('.gallery__like');
+  const newCard = cardElement.cloneNode(true);
+  const cardPhoto = newCard.querySelector('.gallery__photo');
+  const cardTitle = newCard.querySelector('.gallery__title');
+  const cardDeleteButton = newCard.querySelector('.gallery__del');
+  const heart = newCard.querySelector('.gallery__like');
 
   cardPhoto.src = link;
   cardPhoto.alt = name;
@@ -124,19 +132,23 @@ function createCard(name, link) {
   });
 
   cardDeleteButton.addEventListener('click', () => {
-    cardElement.remove();
+    newCard.remove();
   });
 
   heart.addEventListener('click', () => {
     heart.classList.toggle('gallery__like_active');
   });
 
-  return cardElement;
+  return newCard;
 };
 
 // Получение данных из формы создания карточки места
 cardAddButton.addEventListener('click', () => {
   popupFormCard.reset();
+  toggleButtonState(cardInputList, cardSaveButton, validationConfig);
+  cardInputList.forEach((inputElement) => {
+    hideInputError(popupFormCard, inputElement, validationConfig);
+  });
   openPopup(popupCard);
 });
 
