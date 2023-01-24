@@ -1,4 +1,4 @@
-Проектная работа № 3
+Проектная работа № 3 (версия на конец 6 спринта без применения ООП)
 # Место
 
 ## Описание проекта:
@@ -21,4 +21,4 @@
 * [Ссылка на макет 4 спринт в Figma](https://www.figma.com/file/AJlNiRkANk4KLBYfCQ3H5x/JavaScript.-Sprint-4?t=TRIKOiG8frPu6IPE-1)
 * [Ссылка на макет 5 спринт в Figma](https://www.figma.com/file/EZJqgRoqXP6lV4O5xzHj3U/JavaScript.-Sprint-5?node-id=50160%3A460&t=8nU1GbhytpSWFVY4-1)
 * [Ссылка на макет 6 спринт в Figma](https://www.figma.com/file/3rmeBseVO5pCEbT6jxCKS7/JavaScript.-Sprint-6?node-id=0%3A1&t=H7dbvq2ttG9QAsOj-1)
-* [Ссылка на проект](https://skillstack.github.io/mesto/)
+* [Ссылка на проект](https://skillstack.github.io/mesto_type_vanilla-js/)
